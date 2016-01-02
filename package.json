@@ -24,12 +24,12 @@
   "dependencies": {
     "react": "^0.14.5",
     "react-native": "^0.17.0",
+    "react-native-cli": "^0.1.7",
     "reflux": "^0.3.0"
   },
   "devDependencies": {
-    "babel-eslint": "^4.1.6",
+    "babel-eslint": "^5.0.0-beta6",
     "eslint": "^1.10.3",
-    "eslint-plugin-react": "^3.13.1",
-    "react-native-cli": "^0.1.7"
+    "eslint-plugin-react": "^3.13.1"
   }
 }
