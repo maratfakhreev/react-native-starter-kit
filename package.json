@@ -1,7 +1,22 @@
 {
   "name": "ReactNativeStarterKit",
-  "version": "0.0.1",
-  "private": true,
+  "description": "",
+  "version": "1.0.0",
+  "author": {
+    "name": "Marat Fakhreev",
+    "email": "marat.fakhreev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maratfakhreev/react-native-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maratfakhreev/react-native-starter-kit/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "5.3.0"
+  },
   "scripts": {
     "start": "react-native start"
   },
