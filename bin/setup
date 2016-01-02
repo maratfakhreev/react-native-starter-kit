@@ -12,10 +12,19 @@ info_echo() {
   printf "\n${green}%s ...${color_reset}\n" "$1"
 }
 
+transform() {
+  # Rename all files contains "ReactNativeStarterKit"
+  find . -depth -name "*$1*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//'$1'/'$2'}"; done' _ {} +
+  # Rename all text in files which contains "ReactNativeStarterKit"
+  git grep -lz "$1" | xargs -0 perl -i'' -pE "s/$1/$2/g"
+}
+
 if [ ! -z "$1" ]; then
-  # Rename all files and entry contains "ReactNativeStarterKit"
-  find . -depth -name "*ReactNativeStarterKit*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//ReactNativeStarterKit/'$1'}"; done' _ {} +
-  git grep -lz "ReactNativeStarterKit" | xargs -0 perl -i'' -pE "s/ReactNativeStarterKit/$1/g"
+  appName="$1"
+  downcasedAppName=$(echo ${appName} | tr "[:upper:]" "[:lower:]")
+
+  transform "ReactNativeStarterKit" "${appName}"
+  transform "reactnativestarterkit" "${downcasedAppName}"
   git checkout bin/setup
 
   # Make sure we have gulp installed
@@ -30,5 +39,5 @@ if [ ! -z "$1" ]; then
   info_echo "Yahoo. Application has been prepared ;)"
 else
   # Error message
-  error_echo "Oops ;( Please set your ProjectName. Ex: bin/setup MyNewApp"
+  error_echo "Oops. Please set your project name. Ex: bin/setup MyNewApp"
 fi
