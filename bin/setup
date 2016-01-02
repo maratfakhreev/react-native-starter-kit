@@ -1,43 +1,9 @@
 #!/bin/bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-color_reset=$(tput sgr0)
-
-error_echo() {
-  printf "${red}%s.${color_reset}\n" "$1"
-}
-
-info_echo() {
-  printf "\n${green}%s ...${color_reset}\n" "$1"
-}
-
-transform() {
-  # Rename all files contains "ReactNativeStarterKit"
-  find . -depth -name "*$1*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//'$1'/'$2'}"; done' _ {} +
-  # Rename all text in files which contains "ReactNativeStarterKit"
-  git grep -lz "$1" | xargs -0 perl -i'' -pE "s/$1/$2/g"
-}
-
-if [ ! -z "$1" ]; then
-  appName="$1"
-  downcasedAppName=$(echo ${appName} | tr "[:upper:]" "[:lower:]")
-
-  transform "ReactNativeStarterKit" "${appName}"
-  transform "reactnativestarterkit" "${downcasedAppName}"
-  git checkout bin/setup
-
-  # Make sure we have gulp installed
-  if ! which gulp; then
-    npm install -g react-native-cli
-  fi
-
-  # Install all dependencies
-  npm install --ignore-scripts
-
-  # Success message
-  info_echo "Yahoo. Application has been prepared ;)"
-else
-  # Error message
-  error_echo "Oops. Please set your project name. Ex: bin/setup MyNewApp"
+# Make sure we have react-native installed
+if ! which react-native; then
+  npm install -g react-native-cli
 fi
+
+# Install all dependencies
+npm install --ignore-scripts
