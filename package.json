@@ -22,7 +22,9 @@
     "test": "eslint app"
   },
   "dependencies": {
-    "react-native": "^0.17.0"
+    "react": "^0.14.5",
+    "react-native": "^0.17.0",
+    "reflux": "^0.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.6",
