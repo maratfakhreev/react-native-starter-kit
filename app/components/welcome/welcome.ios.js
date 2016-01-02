@@ -31,13 +31,14 @@ const Welcome = React.createClass({
       <View style={ Styles.container }>
         <Text style={ Styles.welcome }>
           Welcome to React Native!
-          { '\n' }{ '\n' }
-
+          { '\n' }
+        </Text>
+        <Text style={ Styles.state }>
           Reflux state: { this.state.msg }
           { '\n' }
         </Text>
-        <Text>
-          github.com/maratfakhreev/react-native-starter-kit
+        <Text style={ Styles.url }>
+          https://github.com/maratfakhreev/react-native-starter-kit
           { '\n' }{ '\n' }
         </Text>
         <Text style={ Styles.instructions }>

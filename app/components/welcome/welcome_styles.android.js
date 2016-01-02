@@ -8,9 +8,17 @@ export default StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 21,
     textAlign: 'center',
     margin: 10
+  },
+  state: {
+    fontSize: 19,
+    textAlign: 'center',
+    marginBottom: 10
+  },
+  url: {
+    fontSize: 10
   },
   instructions: {
     textAlign: 'center',
