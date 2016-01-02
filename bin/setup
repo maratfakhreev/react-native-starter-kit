@@ -6,4 +6,4 @@ if ! which react-native; then
 fi
 
 # Install all dependencies
-npm install --ignore-scripts
+npm install
