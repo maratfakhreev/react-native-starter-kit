@@ -1,0 +1,34 @@
+#!/bin/bash
+
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+color_reset=$(tput sgr0)
+
+error_echo() {
+  printf "${red}%s.${color_reset}\n" "$1"
+}
+
+info_echo() {
+  printf "\n${green}%s ...${color_reset}\n" "$1"
+}
+
+if [ ! -z "$1" ]; then
+  # Rename all files and entry contains "ReactNativeStarterKit"
+  find . -depth -name "*ReactNativeStarterKit*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//ReactNativeStarterKit/'$1'}"; done' _ {} +
+  git grep -lz "ReactNativeStarterKit" | xargs -0 perl -i'' -pE "s/ReactNativeStarterKit/$1/g"
+  git checkout bin/setup
+
+  # Make sure we have gulp installed
+  if ! which gulp; then
+    npm install -g react-native-cli
+  fi
+
+  # Install all dependencies
+  npm install --ignore-scripts
+
+  # Success message
+  info_echo "Yahoo. Application has been prepared ;)"
+else
+  # Error message
+  error_echo "Oops ;( Please set your ProjectName. Ex: bin/setup MyNewApp"
+fi
