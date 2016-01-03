@@ -2,7 +2,12 @@
 
 [![Build Status](https://travis-ci.org/maratfakhreev/react-native-starter-kit.svg?branch=master)](https://travis-ci.org/maratfakhreev/react-native-starter-kit)
 
-It is the simple starter kit for applications based on React Native and Flux technologies.
+It is the simple starter kit for applications based on ES6, React Native and Flux technologies.
+
+## It includes:
+* React Native as core technology
+* Reflux as flux realization
+* Base skeleton to fast application start
 
 ## Install
 ### OSX
@@ -26,13 +31,13 @@ nvm alias default node
 Clone application as new project
 
 ```bash
-git clone git@github.com:maratfakhreev/react-native-starter-kit.git | cd react-native-starter-kit
+git clone git@github.com:maratfakhreev/react-native-starter-kit.git && cd react-native-starter-kit
 ```
 
 Run prepare script if you need to change application name in all iOS and Android files and entries. And this you need definitely ;)
 
 ```bash
-bin/prepare
+bin/prepare YourAppName
 ```
 
 Run bootstrap script

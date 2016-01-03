@@ -19,10 +19,8 @@ const EntitiesStore = Reflux.createStore({
         'Content-Type': 'application/json'
       }
     })
-    .then((result) => result.json())
-    .then((result) => {
-      this.trigger(result);
-    });
+    .then(result => result.json())
+    .then(result => this.trigger(result));
   },
 
   onCall() {
