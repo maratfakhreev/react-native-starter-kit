@@ -9,22 +9,26 @@ const {
   View
 } = React;
 
-const Welcome = React.createClass({
-  mixins: [Reflux.listenTo(EntitiesStore, 'setMessage')],
+export default class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
 
-  getInitialState() {
-    return {
-      msg: 'Reflux is not ready to use'
-    };
-  },
+    this.state = { msg: 'Reflux is not ready to use' };
+  }
+
+  componentWillMount() {
+    this.unsubscribe = EntitiesStore.listen((msg) => {
+      this.setState({ msg });
+    });
+  }
 
   componentDidMount() {
     EntitiesActions.call();
-  },
+  }
 
-  setMessage(msg) {
-    this.setState({ msg });
-  },
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
 
   render() {
     return (
@@ -50,6 +54,4 @@ const Welcome = React.createClass({
       </View>
     );
   }
-});
-
-export default Welcome;
+}
