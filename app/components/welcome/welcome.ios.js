@@ -1,5 +1,4 @@
 import React from 'react-native';
-import Reflux from 'reflux';
 import Styles from '../welcome/welcome_styles';
 import EntitiesActions from '../../actions/entities';
 import EntitiesStore from '../../stores/entities';
@@ -13,21 +12,21 @@ export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { msg: 'Reflux is not ready to use' };
-  }
-
-  componentWillMount() {
-    this.unsubscribe = EntitiesStore.listen((msg) => {
-      this.setState({ msg });
-    });
+    this.state = EntitiesStore.getState();
   }
 
   componentDidMount() {
+    EntitiesStore.listen(this.changeState.bind(this));
     EntitiesActions.call();
+    EntitiesActions.fetch();
   }
 
   componentWillUnmount() {
-    this.unsubscribe();
+    EntitiesStore.unlisten(this.changeState.bind(this));
+  }
+
+  changeState(state) {
+    this.setState(state);
   }
 
   render() {
@@ -38,7 +37,9 @@ export default class Welcome extends React.Component {
           { '\n' }
         </Text>
         <Text style={ Styles.state }>
-          Reflux state: { this.state.msg }
+          Flux state: { this.state.msg }
+          { '\n' }
+          Data state: { this.state.data }
           { '\n' }
         </Text>
         <Text style={ Styles.url }>
@@ -49,7 +50,8 @@ export default class Welcome extends React.Component {
           To get started, edit index.ios.js
         </Text>
         <Text style={ Styles.instructions }>
-          Press Cmd+R to reload,{ '\n' }
+          Press Cmd+R to reload,
+          { '\n' }
           Cmd+D or shake for dev menu
         </Text>
       </View>

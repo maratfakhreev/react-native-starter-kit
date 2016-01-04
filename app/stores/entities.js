@@ -1,31 +1,22 @@
-import React from 'react-native';
-import Reflux from 'reflux';
-import Config from '../config';
+import Alt from '../alt';
 import EntitiesActions from '../actions/entities';
 
-const EntitiesStore = Reflux.createStore({
-  listenables: [EntitiesActions],
+export default Alt.createStore(class EntitiesStore {
+  constructor() {
+    this.msg = 'entities are not ready to use';
+    this.data = [];
 
-  onGet() {
-    const url = `${Config.apiPath}/entities`;
-    const type = 'get';
-    const params = '';
-
-    fetch(url, {
-      method: type,
-      body: params,
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(result => result.json())
-    .then(result => this.trigger(result));
-  },
-
-  onCall() {
-    this.trigger('Reflux is ready to use');
+    this.bindListeners({
+      set: EntitiesActions.SET,
+      call: EntitiesActions.CALL
+    });
   }
-});
 
-export default EntitiesStore;
+  set(data) {
+    this.data = data;
+  }
+
+  call(msg) {
+    this.msg = msg;
+  }
+}, 'EntitiesStore');
