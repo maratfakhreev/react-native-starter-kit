@@ -1,8 +1,8 @@
 # React Native Starter Kit
 
 [![Build Status](https://travis-ci.org/maratfakhreev/react-native-starter-kit.svg?branch=master)](https://travis-ci.org/maratfakhreev/react-native-starter-kit)
-[![Dependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit.svg?branch=master)](https://david-dm.org/maratfakhreev/react-native-starter-kit)
-[![devDependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit/dev-status.svg?branch=master)](https://david-dm.org/maratfakhreev/react-native-starter-kit#info=devDependencies)
+[![Dependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit.svg)](https://david-dm.org/maratfakhreev/react-native-starter-kit)
+[![devDependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit/dev-status.svg)](https://david-dm.org/maratfakhreev/react-native-starter-kit#info=devDependencies)
 
 It is the simple starter kit for applications based on ES6, React Native and Flux technologies.
 
