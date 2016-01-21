@@ -24,7 +24,7 @@ if [ ! -z "$1" ]; then
 
   transform "ReactNativeStarterKit" "${appName}"
   transform "reactnativestarterkit" "${downcasedAppName}"
-  git checkout bin/setup
+  git checkout bin/prepare
 
   # Success message
   info_echo "Yahoo. Application has been prepared ;)"
