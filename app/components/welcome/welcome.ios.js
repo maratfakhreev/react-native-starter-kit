@@ -18,7 +18,7 @@ export default class Welcome extends React.Component {
   componentDidMount() {
     EntitiesStore.listen(this.changeState.bind(this));
     EntitiesActions.call();
-    EntitiesActions.fetch();
+    EntitiesActions.fetchAll();
   }
 
   componentWillUnmount() {

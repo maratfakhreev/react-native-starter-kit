@@ -2,7 +2,7 @@ import Alt from '../alt';
 import Config from '../config';
 
 export default Alt.createActions(class EntitiesAction {
-  fetch() {
+  fetchAll() {
     return (dispatch) => {
       const url = `${Config.apiPath}/entities`;
 
