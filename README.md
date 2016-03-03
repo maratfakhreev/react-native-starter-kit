@@ -56,7 +56,7 @@ Run ES6 linter
 gulp eslint
 ```
 
-## Getting To Know React Native
+## Getting to know React Native
 
-To find out more about React Native, check out the [documentation](https://facebook.github.io/react-native/docs/getting-started.html).
-To find out more about Alt, check out the [documentation](http://alt.js.org/docs/).
+* To find out more about React Native, check out the [documentation](https://facebook.github.io/react-native/docs/getting-started.html).
+* To find out more about Alt, check out the [documentation](http://alt.js.org/docs/).
