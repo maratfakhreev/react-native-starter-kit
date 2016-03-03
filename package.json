@@ -1,6 +1,6 @@
 {
   "name": "ReactNativeStarterKit",
-  "description": "",
+  "description": "It is the simple starter kit for mobile applications based on ES6, React Native and Flux technologies.",
   "version": "1.0.0",
   "author": {
     "name": "Marat Fakhreev",
