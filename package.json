@@ -24,13 +24,12 @@
     "test": "eslint app"
   },
   "dependencies": {
-    "alt": "^0.18.2",
-    "fbjs": "0.6.1",
-    "react-native": "^0.21.0"
+    "alt": "~0.18.3",
+    "react-native": "~0.22.0"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0",
-    "eslint": "^2.2.0",
-    "eslint-plugin-react": "^4.1.0"
+    "babel-eslint": "~5.0.0",
+    "eslint": "2.2.0",
+    "eslint-plugin-react": "~4.2.3"
   }
 }
