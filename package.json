@@ -15,16 +15,16 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "5.7.0"
+    "node": "5.9.0"
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "upgrade": "npm update -g react-native-cli && react-native upgrade",
-    "postinstall": "find . -name 'fbjs' -print | grep '\\./node_modules/fbjs' -v | xargs rm -rf",
     "test": "eslint app"
   },
   "dependencies": {
     "alt": "~0.18.3",
+    "react": "~0.14.7",
     "react-native": "~0.22.0"
   },
   "devDependencies": {
