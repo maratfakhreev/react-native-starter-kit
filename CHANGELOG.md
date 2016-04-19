@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.2.0
 - Add alt-utils. Refactor components
 - Make code refactoring. Add request lib
 - Introduce sources
