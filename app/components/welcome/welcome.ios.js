@@ -9,20 +9,22 @@ const {
 } = React;
 
 export default class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
+  state = EntitiesStore.getState()
 
-    this.state = EntitiesStore.getState();
+  constructor() {
+    super();
+
+    this.changeState = this.changeState.bind(this);
   }
 
   componentDidMount() {
-    EntitiesStore.listen(this.changeState.bind(this));
+    EntitiesStore.listen(this.changeState);
     EntitiesActions.call();
-    EntitiesActions.fetchAll();
+    EntitiesActions.get();
   }
 
   componentWillUnmount() {
-    EntitiesStore.unlisten(this.changeState.bind(this));
+    EntitiesStore.unlisten(this.changeState);
   }
 
   changeState(state) {

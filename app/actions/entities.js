@@ -1,28 +1,15 @@
 import Alt from '../alt';
-import Config from '../config';
+import config from '../config';
+import entitiesSource from '../sources/entities';
+import { request } from '../lib/request';
 
 export default Alt.createActions(class EntitiesAction {
-  fetchAll() {
+  get(entities) {
     return (dispatch) => {
-      const url = `${Config.apiPath}/entities`;
-
-      dispatch();
-      fetch(url, {
-        method: 'get',
-        body: '',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(data => data.json())
-      .then(data => this.set(data))
-      .catch(() => this.set('entities data is empty'));
+      entitiesSource.get()
+        .then(result => dispatch(result))
+        .catch(() => dispatch('entities data is empty'));
     };
-  }
-
-  set(data) {
-    return data;
   }
 
   call() {

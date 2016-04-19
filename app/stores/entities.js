@@ -7,12 +7,12 @@ export default Alt.createStore(class EntitiesStore {
     this.data = [];
 
     this.bindListeners({
-      set: EntitiesActions.SET,
+      get: EntitiesActions.GET,
       call: EntitiesActions.CALL
     });
   }
 
-  set(data) {
+  get(data) {
     this.data = data;
   }
 

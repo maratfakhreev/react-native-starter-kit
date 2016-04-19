@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- Make code refactoring. Add request lib
+- Introduce sources
 - Upgrade node to 5.10.1
 - Upgrade react-native to 0.24.1
 - Upgrade dependencies
