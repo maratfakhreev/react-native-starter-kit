@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- Upgrade react-native to 0.24.1
+- Upgrade dependencies
 
 ## 1.1.0
 - Upgrade ios/android apps to react-native 0.22.0
