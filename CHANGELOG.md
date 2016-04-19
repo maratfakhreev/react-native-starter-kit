@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Add alt-utils. Refactor components
 - Make code refactoring. Add request lib
 - Introduce sources
 - Upgrade node to 5.10.1

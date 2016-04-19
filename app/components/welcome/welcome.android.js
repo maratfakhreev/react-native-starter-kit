@@ -1,34 +1,21 @@
-import React from 'react-native';
-import Styles from '../welcome/welcome_styles';
+import React, { Text, View } from 'react-native';
+import connectToStores from 'alt-utils/lib/connectToStores';
 import EntitiesActions from '../../actions/entities';
 import EntitiesStore from '../../stores/entities';
+import Styles from '../welcome/welcome_styles';
 
-const {
-  Text,
-  View
-} = React;
+export default connectToStores(class Welcome extends React.Component {
+  static getStores(props) {
+    return [EntitiesStore];
+  }
 
-export default class Welcome extends React.Component {
-  state = EntitiesStore.getState()
-
-  constructor() {
-    super();
-
-    this.changeState = this.changeState.bind(this);
+  static getPropsFromStores(props) {
+    return EntitiesStore.getState();
   }
 
   componentDidMount() {
-    EntitiesStore.listen(this.changeState);
     EntitiesActions.call();
     EntitiesActions.get();
-  }
-
-  componentWillUnmount() {
-    EntitiesStore.unlisten(this.changeState);
-  }
-
-  changeState(state) {
-    this.setState(state);
   }
 
   render() {
@@ -39,9 +26,9 @@ export default class Welcome extends React.Component {
           { '\n' }
         </Text>
         <Text style={ Styles.state }>
-          Flux state: { this.state.msg }
+          Flux state: { this.props.msg }
           { '\n' }
-          Data state: { this.state.data }
+          Data state: { this.props.data }
           { '\n' }
         </Text>
         <Text style={ Styles.url }>
@@ -57,4 +44,4 @@ export default class Welcome extends React.Component {
       </View>
     );
   }
-}
+});
