@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Upgrade node to 5.10.1
 - Upgrade react-native to 0.24.1
 - Upgrade dependencies
 
