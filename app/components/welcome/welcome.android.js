@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import EntitiesActions from '../../actions/entities';
 import EntitiesStore from '../../stores/entities';
-import Styles from '../welcome/welcomeStyles';
+import Styles from './welcomeStyles';
 
 @connectToStores
 export default class Welcome extends Component {
