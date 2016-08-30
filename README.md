@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit.svg)](https://david-dm.org/maratfakhreev/react-native-starter-kit)
 [![devDependency Status](https://david-dm.org/maratfakhreev/react-native-starter-kit/dev-status.svg)](https://david-dm.org/maratfakhreev/react-native-starter-kit#info=devDependencies)
 
-It is the simple starter kit for mobile applications based on ES6, React Native and Flux technologies.
+It is the simple starter kit for mobile applications based on React Native, ES6/ES7, Babel and Flux technologies.
 
 ## It includes:
 * React Native as core technology
