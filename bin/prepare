@@ -30,5 +30,5 @@ if [ ! -z "$1" ]; then
   info_echo "Yahoo. Application has been prepared ;)"
 else
   # Error message
-  error_echo "Oops. Please set your project name. Ex: bin/setup MyNewApp"
+  error_echo "Oops. Please set your project name. Ex: bin/prepare MyNewApp"
 fi
