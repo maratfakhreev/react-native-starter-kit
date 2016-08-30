@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Text, View } from 'react-native';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import EntitiesActions from '../../actions/entities';
@@ -7,6 +7,14 @@ import Styles from '../welcome/welcomeStyles';
 
 @connectToStores
 export default class Welcome extends Component {
+  static propTypes = {
+    data: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.string
+    ]).isRequired,
+    msg: PropTypes.string.isRequired
+  }
+
   static getStores(props) {
     return [EntitiesStore];
   }
@@ -21,6 +29,8 @@ export default class Welcome extends Component {
   }
 
   render() {
+    const { msg, data } = this.props;
+
     return (
       <View style={ Styles.container }>
         <Text style={ Styles.welcome }>
@@ -28,9 +38,9 @@ export default class Welcome extends Component {
           { '\n' }
         </Text>
         <Text style={ Styles.state }>
-          Flux state: { this.props.msg }
+          Flux state: { msg }
           { '\n' }
-          Data state: { this.props.data }
+          Data state: { data }
           { '\n' }
         </Text>
         <Text style={ Styles.url }>

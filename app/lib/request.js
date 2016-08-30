@@ -1,6 +1,6 @@
 import deepAssign from 'deep-assign';
 
-export function request(url, params) {
+export default function request(url, params) {
   const defaultParams = {
     headers: {
       'Accept': 'application/json',

@@ -17,7 +17,7 @@ export default class EntitiesStore {
   }
 
   get(data) {
-    this.data = data;
+    this.data = data ? data : 'entities data is empty';
   }
 
   call(msg) {
