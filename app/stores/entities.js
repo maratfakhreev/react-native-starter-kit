@@ -1,7 +1,11 @@
-import Alt from '../alt';
+import Alt from '../altFlux';
+import { createStore } from 'alt-utils/lib/decorators';
 import EntitiesActions from '../actions/entities';
 
-export default Alt.createStore(class EntitiesStore {
+@createStore(Alt)
+export default class EntitiesStore {
+  static displayName = 'EntitiesStore'
+
   constructor() {
     this.msg = 'entities are not ready to use';
     this.data = [];
@@ -19,4 +23,4 @@ export default Alt.createStore(class EntitiesStore {
   call(msg) {
     this.msg = msg;
   }
-}, 'EntitiesStore');
+}

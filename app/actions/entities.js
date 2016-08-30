@@ -1,9 +1,11 @@
-import Alt from '../alt';
+import Alt from '../altFlux';
+import { createActions } from 'alt-utils/lib/decorators';
 import config from '../config';
 import entitiesSource from '../sources/entities';
 import { request } from '../lib/request';
 
-export default Alt.createActions(class EntitiesAction {
+@createActions(Alt)
+export default class EntitiesAction {
   get(entities) {
     return (dispatch) => {
       entitiesSource.get()
@@ -15,4 +17,4 @@ export default Alt.createActions(class EntitiesAction {
   call() {
     return 'entities are ready to use';
   }
-});
+}

@@ -1,10 +1,12 @@
-import React, { Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import EntitiesActions from '../../actions/entities';
 import EntitiesStore from '../../stores/entities';
-import Styles from '../welcome/welcome_styles';
+import Styles from '../welcome/welcomeStyles';
 
-export default connectToStores(class Welcome extends React.Component {
+@connectToStores
+export default class Welcome extends Component {
   static getStores(props) {
     return [EntitiesStore];
   }
@@ -44,4 +46,4 @@ export default connectToStores(class Welcome extends React.Component {
       </View>
     );
   }
-});
+}
