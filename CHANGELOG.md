@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.3.0
+- Upgrade node to 6.5.x
+- Add lodash
+- Add new rules to eslint config
+- Refactor application code
+- Add babel. Add ES7 decorators
+- Upgrade react-native to 0.32.0
+- Upgrade dependencies
+
 ## 1.2.0
 - Add alt-utils. Refactor components
 - Make code refactoring. Add request lib
