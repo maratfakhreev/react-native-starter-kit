@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Rename components for better naming via import
 
 ## 1.4.0
 - Upgrade node to 6.6.x
