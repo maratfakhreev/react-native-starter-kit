@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- Use babel-preset-react-native-stage-0 as presets dependency for babel features
+- Upgrade dependencies
 
 ## 1.3.0
 - Upgrade node to 6.5.x
