@@ -53,7 +53,7 @@ npm start
 
 Run ES6 linter
 ```bash
-gulp eslint
+npm test
 ```
 
 ## Getting to know React Native
