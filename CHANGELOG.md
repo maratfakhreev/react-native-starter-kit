@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.4.0
 - Upgrade node to 6.6.x
 - Use babel-preset-react-native-stage-0 as presets dependency for babel features
 - Add new rules to eslint config
