@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "6.5.x"
+    "node": "6.6.x"
   },
   "scripts": {
     "start": "./node_modules/react-native/packager/packager.sh start",
