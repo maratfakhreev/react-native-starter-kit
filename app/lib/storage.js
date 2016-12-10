@@ -1,11 +1,10 @@
 import { AsyncStorage } from 'react-native';
 
-export default class AppStorage {
+export default class Storage {
   static storageKey = '';
 
   static get() {
-    return AsyncStorage.getItem(this.storageKey)
-      .then(res => JSON.parse(res));
+    return AsyncStorage.getItem(this.storageKey).then(res => JSON.parse(res));
   }
 
   static set(value) {
