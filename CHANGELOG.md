@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Upgrade node to 7.2.x
+- Upgrade react-native to 0.39.1
+- Upgrade dependencies
 - Rename components for better naming via import
 
 ## 1.4.0
