@@ -21,7 +21,7 @@
     "start": "./node_modules/react-native/packager/packager.sh start",
     "reset": "watchman watch-del-all && ./node_modules/react-native/packager/packager.sh start --reset-cache",
     "upgrade": "npm install -g react-native-cli && react-native upgrade",
-    "lint": "eslint app",
+    "lint": "eslint index.ios.js index.android.js ./app --ext .js",
     "test": "npm run lint"
   },
   "dependencies": {

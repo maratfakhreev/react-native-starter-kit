@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Text, View } from 'react-native';
 import connectToStores from 'alt-utils/lib/connectToStores';
-import EntitiesActions from '../../actions/entities';
-import EntitiesStore from '../../stores/entities';
+import HomeActions from './actions';
+import HomeStore from './store';
 import Styles from './styles';
 
 @connectToStores
-export default class Welcome extends Component {
+export default class Home extends Component {
   static propTypes = {
     data: PropTypes.oneOfType([
       PropTypes.array,
@@ -16,16 +16,16 @@ export default class Welcome extends Component {
   }
 
   static getStores(props) {
-    return [EntitiesStore];
+    return [HomeStore];
   }
 
   static getPropsFromStores(props) {
-    return EntitiesStore.getState();
+    return HomeStore.getState();
   }
 
   componentDidMount() {
-    EntitiesActions.call();
-    EntitiesActions.get();
+    HomeActions.call();
+    HomeActions.get();
   }
 
   render() {
